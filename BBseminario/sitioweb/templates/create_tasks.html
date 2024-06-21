@@ -1,0 +1,17 @@
+{% extends 'base.html' %}  {# Extiende la plantilla base.html para mantener un diseño consistente en todo el sitio #}
+
+{% block content %}  {# Define el bloque de contenido que se insertará en la plantilla base #}
+<h1>Create task prueba</h1>
+
+{{ error }}  {# Muestra cualquier mensaje de error pasado desde la vista #}
+
+<form action="/tasks/create/" method="post">  {# Formulario que envía una solicitud POST a la URL /tasks/create/ #}
+    {% csrf_token %}  {# Token CSRF para proteger el formulario contra ataques CSRF #}
+
+    {{ form }}  {# Inserta el formulario generado dinámicamente por Django #}
+
+    <button>
+        Guardar  {# Botón para enviar el formulario #}
+    </button>
+</form>
+{% endblock %}  {# Fin del bloque de contenido #}
