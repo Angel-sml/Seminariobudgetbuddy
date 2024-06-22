@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora de propinas</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/propinas.css' %}" </head>
+
+<body>
+  <h1>Calculadora de Propinas</h1>
+  <form id="propinaForm">
+    <label for="precio">Precio a pagar:</label><br>
+    <input type="text" id="precio" name="precio"><br>
+    <label for="porcentaje">Porcentaje de propina:</label><br>
+    <input type="text" id="porcentaje" name="porcentaje">
+    <button type="button" onclick="calcularPropina()">Calcular</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer-content">
+          <h3>Información de contacto</h3>
+          <p>Dirección: Calle Principal #123, Ciudad, País</p>
+          <p>Teléfono: +123 456 789</p>
+          <p>Correo electrónico: info@example.com</p>
+        </div>
+        <div class="footer-content">
+          <h3>Información legal</h3>
+          <p>Derechos de autor © 2024. Todos los derechos reservados.</p>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function calcularPropina() {
+      // Obtener el valor del precio y del porcentaje de propina
+      var precio = document.getElementById("precio").value;
+      var porcentaje = document.getElementById("porcentaje").value;
+      var resultadoElement = document.getElementById("resultado");
+
+      if (isNaN(precio) || isNaN(porcentaje) || precio.trim() === "" || porcentaje.trim() === ""){
+        resultadoElement.innerHTML = "Datos invalidos. Por favor, introduce números válidos.";
+        resultadoElement.style.fontSize = "40px"; // Tamaño del texto
+        resultadoElement.style.fontWeight = "bold"; // Grosor del texto
+        resultadoElement.style.textAlign = "center"; // Centrar el texto
+        resultadoElement.style.color = "red";
+        return;
+      }
+
+      // Convertir entradas a números flotantes
+      precio = parseFloat(precio);
+      porcentaje = parseFloat(porcentaje);
+
+      // Calcular la propina
+      var propina = precio * (porcentaje / 100);
+
+      // Mostrar el resultado debajo del formulario
+      resultadoElement.innerHTML = "La propina a pagar es: $" + propina.toFixed(2);
+      resultadoElement.style.fontSize = "40px"; // Tamaño del texto
+      resultadoElement.style.fontWeight = "bold"; // Grosor del texto
+      resultadoElement.style.textAlign = "center"; // Centrar el texto
+      resultadoElement.style.color = "black";
+    }
+  </script>
+</body>
+
+</html>

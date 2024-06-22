@@ -3,7 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-from .forms import taskform 
+from .forms import taskform
+from .models import task
 
 # Función para mostrar la página de inicio
 def home(request):
@@ -44,7 +45,8 @@ def signout(request):
 
 # Función para mostrar la página de tareas
 def tasks(request):
-    return render(request, 'tasks.html')
+    tasks = task.objects.filter(user=request.user, date_completed__isnull = True)
+    return render(request, 'tasks.html', {'tasks': tasks})
 
 # Función para gestionar la creación de nuevas tareas
 def create_tasks(request):
@@ -86,3 +88,9 @@ def signin(request):
         else:
             login(request, user)  # Inicia sesión con el usuario autenticado
             return redirect('home')  # Redirige a la página de inicio
+
+def propinas(request):
+    return render(request, 'propinas.html')
+
+def cuotas(request):
+    return render(request, 'cuotas.html')

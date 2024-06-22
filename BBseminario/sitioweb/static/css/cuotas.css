@@ -1,0 +1,115 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+background: url("https://cdn.pixabay.com/photo/2020/09/15/15/59/background-5574045_1280.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: Arial, sans-serif; /* Tipo de fuente */
+  font-size: 2.5rem; /* Tamaño de la fuente */
+  color: #333; /* Color del texto */
+  text-align: center; /* Alineación del texto */
+  margin-bottom: 20px; /* Margen inferior */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+
+form {
+  width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+margin-bottom: 10px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: calc(100% - 10px);
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.image {
+margin: 20px auto;  
+padding: 10px; 
+border: 1px solid #ddd; 
+border-radius: 10px; 
+display: block; 
+width: 50%; 
+height: auto; 
+}
+
+
+.resultado{
+font-family: Arial, sans-serif; /* Tipo de fuente */
+font-size: 2.5rem; /* Tamaño de la fuente */
+color: #333; /* Color del texto */
+text-align: center; /* Alineación del texto */
+
+}
+
+/*Estilizacion del footer*/
+footer {
+  margin-top: auto;
+  background-color: #f8f9fa;
+  padding: 5px 0;
+}
+
+footer .container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content{
+  width: 45%;
+  padding: 0 15px;
+}
+
+footer h3 {
+  font-size: 20px;
+  color: #333;
+}
+
+footer p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
