@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compras Posibles</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/compras_con_presupuesto.css' %}">
+</head>
+
+<body>
+  {% load static %}
+  <video src="{% static 'videos/fondo_tecno.mp4' %}" autoplay="true" muted="true" loop="true"></video>
+
+
+  <div class="container">
+    <h1>Bienvenido, te ayudaré a conseguir productos con tu presupuesto con <br><span>BudgetBuddy</span></h1>
+
+    <form method="post" action="/compras/">
+      {% csrf_token %}
+      <label for="presupuesto">Introduce tu presupuesto:</label>
+      <input type="number" id="presupuesto" name="presupuesto" min="1000000" max="5000000" step="1000000" required>
+      <button type="submit">Filtrar</button>
+    </form>
+
+    <div class="gallery">
+      <h2>Productos disponibles</h2>
+      <div class="thumbnails">
+        {% for producto in productos %}
+        <div class="product">
+          {% load static %}
+          <img src="{% static 'images/' %}{{ producto.imagen }}" alt="{{ producto.nombre }}">
+          <p>{{ producto.nombre }}</p>
+          <p>Precio: {{ producto.precio }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer-content">
+          <h3>Información de contacto</h3>
+          <p>Dirección: Calle Principal #123, Ciudad, País</p>
+          <p>Teléfono: +123 456 789</p>
+          <p>Correo electrónico: info@example.com</p>
+        </div>
+        <div class="footer-content">
+          <h3>Información legal</h3>
+          <p>Derechos de autor © 2024. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript para expandir las imágenes al pasar el cursor
+    var thumbnails = document.querySelectorAll('.thumbnails img');
+    thumbnails.forEach(function (thumbnail) {
+      thumbnail.addEventListener('mouseover', function () {
+        this.style.transform = "scale(1.1)";
+      });
+      thumbnail.addEventListener('mouseout', function () {
+        this.style.transform = "scale(1)";
+      });
+    });
+  </script>
+</body>
+
+</html>

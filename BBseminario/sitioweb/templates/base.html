@@ -12,10 +12,16 @@
             <li>
                 <a href="/">Home</a>
             </li>
-            <li>
-                <a href="/tasks">tasks</a>
-            </li>
             {% if user.is_authenticated %}
+            <li>
+                <a href="/tasks">tasks pendientes</a>
+            </li>
+            <li>
+                <a href="/tasks-completadas">tasks completadas</a>
+            </li>
+            <li>
+                <a href="/tasks/create/">Crear task</a>
+            </li>
             <li>    
                 <a href="/logout">logout</a>
             </li>
@@ -26,6 +32,16 @@
             <li>
                 <a href="/signin">signin</a>
             </li>
+            <li>
+                <a href="/cuotas">Calculadora de cuotas</a>
+            </li>
+            <li>
+                <a href="/propinas">Calculadora de propinas</a>
+            </li>
+            <li>
+                <a href="/compras">Presupuesto para compras</a>
+            </li>
+            
             {% endif %}
         </ul>
     </nav>

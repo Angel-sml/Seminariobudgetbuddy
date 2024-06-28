@@ -1,19 +1,24 @@
 {% extends 'base.html' %}  {# Extiende la plantilla base.html para mantener un diseño consistente en todo el sitio #}
 
 {% block content %}  {# Define el bloque de contenido que se insertará en la plantilla base #}
-<h1>task prueba</h1> 
+<h1>tasks pendientes</h1> 
 
 <ul>
     {% for task in tasks %}  {# Itera sobre la lista de tareas pasadas desde la vista #}
     <li>
-        {% if task.important %}  {# Verifica si la tarea es importante #}
-        <strong>{{ task.title }}</strong>  {# Si la tarea es importante, muestra el título en negrita #}
-        {% else %}
-            {{ task.title }}  {# Si la tarea no es importante, muestra el título sin negrita #}
-        {% endif %}
-        
-        <p>{{ task.description }}</p>  {# Muestra la descripción de la tarea #}
-        <p>{{ task.user.username }}</p>  {# Muestra el nombre de usuario del creador de la tarea #}
+        <a href="{% url 'detalles_task' task.id %}">
+            {% if task.important %}  {# Verifica si la tarea es importante #}
+            <strong>{{ task.title }}</strong>  {# Si la tarea es importante, muestra el título en negrita #}
+            {% else %}
+                {{ task.title }}  {# Si la tarea no es importante, muestra el título sin negrita #}
+            {% endif %}
+            
+            <p>{{ task.description }}</p>  {# Muestra la descripción de la tarea #}
+            <p>{{ task.user.username }}</p>  {# Muestra el nombre de usuario del creador de la tarea #}
+            <p>{{ task.date_completed|date:'M j, Y H:i' }}</p>
+
+
+        </a>
     </li>
     {% endfor %}
 </ul>

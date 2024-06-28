@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gráfica de Líneas</title>
+</head>
+<body>
+    <h1>Inserta valores para la gráfica</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Agregar Valor</button>
+    </form>
+
+    <h2>Gráfica:</h2>
+    <img src="{{ plot_uri }}" alt="Gráfica de Líneas">
+
+</body>
+</html>
