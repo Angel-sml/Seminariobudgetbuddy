@@ -15,23 +15,23 @@ import urllib.parse
 
 # Lista de productos (ejemplo)
 productos = [
-    {"nombre": "iPad 10", "precio": 1000000, "imagen": "ipad10.jpg"},
-    {"nombre": "iPhone 13", "precio": 2000000, "imagen": "iphone13.jpg"},
-    {"nombre": "iPhone 14", "precio": 3000000, "imagen": "iphone14.jpg"},
-    {"nombre": "iPhone 15", "precio": 4000000, "imagen": "iphone15.jpg"},
-    {"nombre": "Laptop Asus", "precio": 5000000, "imagen": "lapasus.jpg"},
-    {"nombre": "Laptop HP", "precio": 5000000, "imagen": "laphp.jpg"},
-    {"nombre": "Laptop Lenovo", "precio": 5000000, "imagen": "laplenovo.jpg"},
-    {"nombre": "Televisor LG 50", "precio": 5000000, "imagen": "lg50.jpg"},
-    {"nombre": "MAC", "precio": 5000000, "imagen": "mac.jpg"},
-    {"nombre": "Nintendo Switch", "precio": 5000000, "imagen": "nintendoswitch.jpg"},
-    {"nombre": "PlayStation 4", "precio": 5000000, "imagen": "playstation4.jpg"},
-    {"nombre": "PlayStation 5", "precio": 5000000, "imagen": "playstation5.jpg"},
-    {"nombre": "Poco X6 Pro", "precio": 5000000, "imagen": "pocox6pro.jpg"},
-    {"nombre": "Redmi Note 13 Pro", "precio": 5000000, "imagen": "redmi13pro.png"},
-    {"nombre": "Televisor Samsun 50", "precio": 5000000, "imagen": "samsung50.jpg"},
-    {"nombre": "Xbox One", "precio": 5000000, "imagen": "xboxone.jpg"},
-    {"nombre": "Xbox Series X", "precio": 5000000, "imagen": "xboxseriesx.jpg"}
+    {"nombre": "iPad 10", "precio": 1000000, "imagen": "ipad10.jpeg"},
+    {"nombre": "iPhone 13", "precio": 2000000, "imagen": "iphone13.jpeg"},
+    {"nombre": "iPhone 14", "precio": 3000000, "imagen": "iphone14.jpeg"},
+    {"nombre": "iPhone 15", "precio": 4000000, "imagen": "iphone15.jpeg"},
+    {"nombre": "Laptop Asus", "precio": 5000000, "imagen": "lapasus.jpeg"},
+    {"nombre": "Laptop HP", "precio": 5000000, "imagen": "laphp.jpeg"},
+    {"nombre": "Laptop Lenovo", "precio": 5000000, "imagen": "laplenovo.jpeg"},
+    {"nombre": "Televisor LG 50", "precio": 5000000, "imagen": "lh50.jpeg"},
+    {"nombre": "MAC", "precio": 5000000, "imagen": "mac.jpeg"},
+    {"nombre": "Nintendo Switch", "precio": 5000000, "imagen": "nintendoswitch.jpeg"},
+    {"nombre": "PlayStation 4", "precio": 5000000, "imagen": "playstation4.jpeg"},
+    {"nombre": "PlayStation 5", "precio": 5000000, "imagen": "playstation5.jpeg"},
+    {"nombre": "Poco X6 Pro", "precio": 5000000, "imagen": "pocox6pro.jpeg"},
+    {"nombre": "Redmi Note 13 Pro", "precio": 5000000, "imagen": "redmi13pro.jpeg"},
+    {"nombre": "Televisor Samsung 50", "precio": 5000000, "imagen": "samsung50.jpeg"},
+    {"nombre": "Xbox One", "precio": 5000000, "imagen": "xboxone.jpeg"},
+    {"nombre": "Xbox Series X", "precio": 5000000, "imagen": "xboxseriesx.jpeg"}
 ]
 
 # Función para mostrar la página de inicio

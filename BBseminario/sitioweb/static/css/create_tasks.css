@@ -1,0 +1,64 @@
+.create-task-page {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1045%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(63%2c 81%2c 181%2c 1)'%3e%3c/rect%3e%3cpath d='M -154.08099431377883%2c130 C -58.08%2c201.4 133.92%2c469.4 325.91900568622117%2c487 C 517.92%2c504.6 613.92%2c232.6 805.9190056862212%2c218 C 997.92%2c203.4 1093.92%2c428.6 1285.9190056862212%2c414 C 1477.92%2c399.4 1735.1%2c137.8 1765.9190056862212%2c145 C 1796.74%2c152.2 1505.18%2c389 1440%2c450' stroke='rgba(33%2c 150%2c 243%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -723.9448528820986%2c424 C -627.94%2c370.4 -435.94%2c174.8 -243.94485288209864%2c156 C -51.94%2c137.2 44.06%2c339 236.05514711790136%2c330 C 428.06%2c321 524.06%2c95.6 716.0551471179014%2c111 C 908.06%2c126.4 1051.27%2c381.8 1196.0551471179015%2c407 C 1340.84%2c432.2 1391.21%2c271 1440%2c237' stroke='rgba(222%2c 222%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -936.8211431988394%2c163 C -840.82%2c200.6 -648.82%2c339.8 -456.8211431988394%2c351 C -264.82%2c362.2 -168.82%2c224.8 23.178856801160578%2c219 C 215.18%2c213.2 311.18%2c333.8 503.1788568011606%2c322 C 695.18%2c310.2 795.81%2c142.4 983.1788568011606%2c160 C 1170.54%2c177.6 1348.64%2c360 1440%2c410' stroke='rgba(33%2c 150%2c 243%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -734.6812773916967%2c247 C -638.68%2c268.2 -446.68%2c369.6 -254.68127739169665%2c353 C -62.68%2c336.4 33.32%2c137 225.31872260830335%2c164 C 417.32%2c191 513.32%2c468.6 705.3187226083033%2c488 C 897.32%2c507.4 1038.38%2c300.6 1185.3187226083032%2c261 C 1332.25%2c221.4 1389.06%2c284.2 1440%2c290' stroke='rgba(222%2c 222%2c 255%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1045'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    background-size: cover;  /* Make sure the background covers the entire hero section */
+    background-repeat: no-repeat;  /* Ensure the background does not repeat */
+    background-position: center;  /* Center the background image */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.create-task-page .form-container {
+    background-color: #F5F5F5;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.create-task-page h1 {
+    color: #1A73E8;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.create-task-page .form-group {
+    margin-bottom: 10px;
+}
+
+.create-task-page label {
+    display: block;
+    color: #1A73E8;
+    margin-bottom: 5px;
+}
+
+.create-task-page input[type="text"],
+.create-task-page textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1A73E8;
+    border-radius: 4px;
+}
+
+.create-task-page textarea {
+    height: 80px;
+}
+
+.create-task-page input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.create-task-page button {
+    background-color: #1A73E8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.create-task-page button:hover {
+    background-color: #1558B0;
+}

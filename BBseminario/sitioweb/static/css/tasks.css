@@ -1,0 +1,32 @@
+/* tasks.css */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #fff;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+ul li a:hover {
+    background-color: #f9f9f9;
+}
+
+ul li a strong {
+    color: #e74c3c;
+}

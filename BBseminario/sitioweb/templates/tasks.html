@@ -1,4 +1,8 @@
 {% extends 'base.html' %}  {# Extiende la plantilla base.html para mantener un diseño consistente en todo el sitio #}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/tasks.css' %}">
+{% block extra_css %}
+{% endblock %}
 
 {% block content %}  {# Define el bloque de contenido que se insertará en la plantilla base #}
 <h1>tasks pendientes</h1> 
