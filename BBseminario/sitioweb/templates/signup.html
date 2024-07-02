@@ -3,7 +3,7 @@
 {% block content %}
 {% load static %}
   <link rel="stylesheet" href="{% static 'css/register.css' %}">
-<h1>----------Registro----------</h1>
+<h1>Registro</h1>
 
 {{error}}
 
@@ -11,7 +11,7 @@
     {% csrf_token %}
     {{form.as_p}}
     <button>
-        Signup
+        Registrarse
     </button>
 </form>
 {% endblock %}

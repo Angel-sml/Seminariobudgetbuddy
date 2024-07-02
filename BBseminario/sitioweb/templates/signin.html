@@ -1,14 +1,18 @@
-{% extends 'base.html' %}
-{% block content %}
-{% load static %}
-  <link rel="stylesheet" href="{% static 'css/Login.css' %}">
-  <h1>Inicia Sesion</h1>
-{{error}}
-<form action="/signin/" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button>
-        Signin
-    </button>
-</form>
-{% endblock %}
+{% extends 'base.html' %}  <!-- Extiende desde la plantilla base 'base.html' -->
+
+{% block content %}  <!-- Define el bloque de contenido -->
+    {% load static %}  <!-- Carga los archivos estáticos -->
+    <link rel="stylesheet" href="{% static 'css/Login.css' %}">  <!-- Enlace al archivo CSS para estilos de login -->
+
+    <h1>Inicia Sesión</h1>  <!-- Título principal de la página -->
+
+    {{ error }}  <!-- Muestra mensajes de error, si los hay -->
+
+    <form action="/signin/" method="POST">  <!-- Formulario para iniciar sesión, enviando los datos a '/signin/' -->
+        {% csrf_token %}  <!-- Token de seguridad CSRF -->
+
+        {{ form.as_p }}  <!-- Renderiza el formulario 'form' como párrafos -->
+
+        <button type="submit">Signin</button>  <!-- Botón para enviar el formulario de inicio de sesión -->
+    </form>
+{% endblock %}  <!-- Fin del bloque de contenido -->

@@ -1,30 +1,43 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}  <!-- Extiende desde la plantilla base 'base.html' -->
 
-{% block content %}
-<h1>{{ Task.title }}</h1>
+{% load static %}  <!-- Carga los archivos estáticos -->
 
-{{ error }}
-
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>
-        Actualizar
-    </button>
-</form>
-
-<form action="{% url 'completar_task' Task.id %}" method="POST">
-    {% csrf_token %}
-    <button>
-        Completada
-    </button>
-</form>
-
-<form action="{% url 'delete_task' Task.id %}" method="POST">
-    {% csrf_token %}
-    <button>
-        Eliminar
-    </button>
-</form>
-
+{% block extra_css %}  <!-- Bloque para cargar CSS adicional -->
+    <link rel="stylesheet" href="{% static 'css/tasks_detalles.css' %}">  <!-- Enlace al archivo CSS para estilos de detalles de tarea -->
 {% endblock %}
+
+{% block content %}  <!-- Bloque de contenido -->
+<div class="task-details">  <!-- Contenedor principal para detalles de tarea -->
+    <h1 class="task-title">{{ Task.title }}</h1>  <!-- Título de la tarea, muestra el título de la tarea 'Task.title' -->
+
+    {% if error %}  <!-- Si hay algún error, mostrarlo -->
+    <div class="error-message">{{ error }}</div>  <!-- Muestra el mensaje de error -->
+    {% endif %}
+
+    <form class="task-form" method="POST">  <!-- Formulario para actualizar la tarea, método POST -->
+        {% csrf_token %}  <!-- Token de seguridad CSRF -->
+
+        {{ form.as_p }}  <!-- Renderiza el formulario 'form' como párrafos -->
+
+        <button class="update-button">  <!-- Botón para actualizar la tarea -->
+            Actualizar
+        </button>
+    </form>
+
+    <div class="button-group">  <!-- Grupo de botones -->
+        <form class="complete-form" action="{% url 'completar_task' Task.id %}" method="POST">  <!-- Formulario para marcar la tarea como completada -->
+            {% csrf_token %}  <!-- Token de seguridad CSRF -->
+            <button class="complete-button">  <!-- Botón para marcar como completada -->
+                Completada
+            </button>
+        </form>
+
+        <form class="delete-form" action="{% url 'delete_task' Task.id %}" method="POST">  <!-- Formulario para eliminar la tarea -->
+            {% csrf_token %}  <!-- Token de seguridad CSRF -->
+            <button class="delete-button">  <!-- Botón para eliminar -->
+                Eliminar
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}  <!-- Fin del bloque de contenido -->

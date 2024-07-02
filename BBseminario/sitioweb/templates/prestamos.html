@@ -2,56 +2,63 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Recordatorio de Prestamos</title>
+    <title>Recordatorio de Préstamos</title>
     {% load static %}
-  <link rel="stylesheet" href="{% static 'css/prestamos.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/prestamos.css' %}">  <!-- Enlace al archivo CSS para estilos -->
     <script>
         function validateMonto() {
-            var monto = document.getElementById("monto").value;
-            var isValid = true;
-            var errorMessage = "";
+            var monto = document.getElementById("monto").value;  // Obtener el valor del campo 'monto'
+            var isValid = true;  // Variable para validar si es válido
+            var errorMessage = "";  // Mensaje de error inicialmente vacío
 
-            if (isNaN(monto)) {
+            if (isNaN(monto)) {  // Si 'monto' no es un número
                 isValid = false;
-                errorMessage += "El campo Monto prestado debe contener solo valores numéricos.\n";
+                errorMessage += "El campo Monto prestado debe contener solo valores numéricos.\n";  // Agregar mensaje de error
             }
 
             if (!isValid) {
-                alert(errorMessage);
+                alert(errorMessage);  // Mostrar alerta con mensajes de error
             }
 
-            return isValid;
+            return isValid;  // Devolver si es válido o no
         }
     </script>
 </head>
 <body>
-    <h1>Recordatorio de Prestamos</h1>
-    <div class="form-container">
-        <form action="{% url 'verprestamos' %}" method="POST" onsubmit="return validateMonto()">
-            {% csrf_token %}
+    <h1>Recordatorio de Préstamos</h1>  <!-- Título principal de la página -->
+    
+    <div class="form-container">  <!-- Contenedor del formulario -->
+        <form action="{% url 'verprestamos' %}" method="POST" onsubmit="return validateMonto()">  <!-- Formulario para guardar datos de préstamos, llama a la función 'validateMonto' en el evento submit -->
+            {% csrf_token %}  <!-- Token de seguridad CSRF -->
+            
             <label for="nombre">Nombre:</label><br>
-            <input type="text" id="nombre" name="nombre"><br>
+            <input type="text" id="nombre" name="nombre"><br>  <!-- Campo para ingresar el nombre del préstamo -->
+            
             <label for="fecha">Fecha:</label><br>
-            <input type="date" id="fecha" name="fecha"><br>
-            <label for="fecha2">Fecha maxima:</label><br>
-            <input type="date" id="fecha2" name="fecha2"><br>
+            <input type="date" id="fecha" name="fecha"><br>  <!-- Campo para ingresar la fecha del préstamo -->
+            
+            <label for="fecha2">Fecha máxima:</label><br>
+            <input type="date" id="fecha2" name="fecha2"><br>  <!-- Campo para ingresar la fecha máxima de pago -->
+            
             <label for="monto">Monto prestado:</label><br>
-            <input type="text" id="monto" name="monto"><br>
-            <button type="submit" id="uwu" name="lname">Guardar</button>
+            <input type="text" id="monto" name="monto"><br>  <!-- Campo para ingresar el monto prestado -->
+            
+            <button type="submit" id="uwu" name="lname">Guardar</button>  <!-- Botón para enviar el formulario -->
         </form>
     </div>
-    <footer>
+    
+    <footer>  <!-- Pie de página -->
         <div class="container">
             <div class="row">
                 <div class="footer-content">
                     <h3>Información de contacto</h3>
-                    <p>Dirección: Calle Principal #123, Ciudad, País</p>
+                    <p>Dirección: Calle Principal #123, Ciudad, País</p>  <!-- Información de contacto -->
                     <p>Teléfono: +123 456 789</p>
                     <p>Correo electrónico: info@example.com</p>
                 </div>
                 <div class="footer-content">
                     <h3>Información legal</h3>
-                    <p>Derechos de autor © 2024. Todos los derechos reservados.</p>
+                    <p>Derechos de autor © 2024. Todos los derechos reservados.</p>  <!-- Información legal -->
                 </div>
             </div>
         </div>

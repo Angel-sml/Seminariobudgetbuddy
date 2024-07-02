@@ -1,32 +1,39 @@
-{% extends 'base.html' %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/create_tasks.css' %}">
+{% extends 'base.html' %}  <!-- Extiende el diseño base 'base.html' -->
+
+{% load static %}  <!-- Carga archivos estáticos como CSS -->
+
+<link rel="stylesheet" href="{% static 'css/create_tasks.css' %}">  <!-- Enlace al archivo CSS específico para esta plantilla -->
+
 {% block extra_css %}
 {% endblock %}
-{% block content %}
-<div class="create-task-page">
-    <div class="form-container">
-        <h1>Crear Meta Financiera</h1>
-        <form action="/tasks/create/" method="post">
-            {% csrf_token %}
-            
-            <div class="form-group">
+
+{% block content %}  <!-- Define un bloque de contenido que será reemplazado en 'base.html' -->
+
+<div class="create-task-page">  <!-- Contenedor principal para la página de creación de meta financiera -->
+    <div class="form-container">  <!-- Contenedor del formulario -->
+        <h1>Crear Meta Financiera</h1>  <!-- Título principal -->
+
+        <form action="/tasks/create/" method="post">  <!-- Formulario para crear una nueva meta financiera -->
+            {% csrf_token %}  <!-- Token de seguridad para proteger el formulario -->
+
+            <div class="form-group">  <!-- Grupo de campos para el título -->
                 <label for="id_title">Titulo</label>
-                <input type="text" name="title" id="id_title" placeholder="Escribe un titulo...">
+                <input type="text" name="title" id="id_title" placeholder="Escribe un titulo...">  <!-- Campo de entrada para el título -->
             </div>
-            
-            <div class="form-group">
+
+            <div class="form-group">  <!-- Grupo de campos para la descripción -->
                 <label for="id_description">Descripción</label>
-                <textarea name="description" id="id_description" placeholder="Escribe una descripción..."></textarea>
+                <textarea name="description" id="id_description" placeholder="Escribe una descripción..."></textarea>  <!-- Campo de texto para la descripción -->
             </div>
-            
-            <div class="form-group">
+
+            <div class="form-group">  <!-- Grupo de campos para la importancia -->
                 <label for="id_important">Importante</label>
-                <input type="checkbox" name="important" id="id_important">
+                <input type="checkbox" name="important" id="id_important">  <!-- Checkbox para indicar si es importante -->
             </div>
-            
-            <button type="submit">Guardar</button>
+
+            <button type="submit">Guardar</button>  <!-- Botón para enviar el formulario -->
         </form>
     </div>
 </div>
+
 {% endblock %}

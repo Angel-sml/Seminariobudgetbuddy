@@ -1,28 +1,28 @@
-{% extends 'base.html' %}  {# Extiende la plantilla base.html para mantener un diseño consistente en todo el sitio #}
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/tasks.css' %}">
-{% block extra_css %}
+{% extends 'base.html' %}  <!-- Extiende desde la plantilla base 'base.html' -->
+
+{% load static %}  <!-- Carga los archivos estáticos -->
+
+{% block extra_css %}  <!-- Bloque para cargar CSS adicional -->
+    <link rel="stylesheet" href="{% static 'css/tasks.css' %}">  <!-- Enlace al archivo CSS para estilos de lista de tareas -->
 {% endblock %}
 
-{% block content %}  {# Define el bloque de contenido que se insertará en la plantilla base #}
-<h1>tasks pendientes</h1> 
+{% block content %}  <!-- Bloque de contenido -->
+<h1>Metas Financieras</h1>  <!-- Título principal -->
 
-<ul>
-    {% for task in tasks %}  {# Itera sobre la lista de tareas pasadas desde la vista #}
-    <li>
-        <a href="{% url 'detalles_task' task.id %}">
-            {% if task.important %}  {# Verifica si la tarea es importante #}
-            <strong>{{ task.title }}</strong>  {# Si la tarea es importante, muestra el título en negrita #}
+<ul class="metas">  <!-- Lista de metas financieras -->
+    {% for task in tasks %}  <!-- Itera sobre cada tarea en 'tasks' -->
+    <li class="{% if task.date_completed %}completada{% else %}pendiente{% endif %}">  <!-- Elemento de la lista, clase dependiendo si está completada o no -->
+        <a href="{% url 'detalles_task' task.id %}">  <!-- Enlace al detalle de la tarea -->
+            {% if task.important %}  <!-- Si la tarea es importante -->
+            <strong>{{ task.title }}</strong>  <!-- Mostrar el título en negrita -->
             {% else %}
-                {{ task.title }}  {# Si la tarea no es importante, muestra el título sin negrita #}
+                {{ task.title }}  <!-- Mostrar el título normalmente -->
             {% endif %}
             
-            <p>{{ task.date_completed|date:'M j, Y H:i' }}</p>
-
-
+            <p>{{ task.date_completed|date:'M j, Y H:i' }}</p>  <!-- Fecha de completado formateada -->
         </a>
     </li>
     {% endfor %}
 </ul>
 
-{% endblock %}  {# Fin del bloque de contenido #}
+{% endblock %}

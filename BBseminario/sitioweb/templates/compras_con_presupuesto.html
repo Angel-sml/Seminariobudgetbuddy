@@ -6,52 +6,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compras Posibles</title>
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/compras_con_presupuesto.css' %}">
+  <link rel="stylesheet" href="{% static 'css/compras_con_presupuesto.css' %}">  <!-- Enlace al archivo CSS -->
 </head>
 
 <body>
   {% load static %}
-  <video src="{% static 'videos/fondo-tecno.mp4' %}" autoplay="true" muted="true" loop="true"></video>
+  <video src="{% static 'videos/fondo-tecno.mp4' %}" autoplay="true" muted="true" loop="true"></video>  <!-- Video de fondo con efectos -->
 
   <div>
-    <a href="/">Volver al home</a>
-    </div>
+    <a href="/">Volver al home</a>  <!-- Enlace para volver a la página principal -->
+  </div>
+  
   <div class="container">
-    <h1>Bienvenido, te ayudaré a conseguir productos con tu presupuesto con <br><span>BudgetBuddy</span></h1>
+    <h1>Bienvenido, te ayudaré a conseguir productos con tu presupuesto con <br><span>BudgetBuddy</span></h1>  <!-- Encabezado principal -->
 
-    <form method="post" action="/compras/">
+    <form method="post" action="/compras/">  <!-- Formulario para filtrar productos por presupuesto -->
       {% csrf_token %}
       <label for="presupuesto">Introduce tu presupuesto:</label>
-      <input type="number" id="presupuesto" name="presupuesto" min="1000000" max="5000000" step="1000000" required>
-      <button type="submit">Filtrar</button>
+      <input type="number" id="presupuesto" name="presupuesto" min="1000000" max="5000000" step="1000000" required>  <!-- Campo para ingresar el presupuesto -->
+      <button type="submit">Filtrar</button>  <!-- Botón para enviar el formulario -->
     </form>
 
     <div class="gallery">
-      <h2>Productos disponibles</h2>
+      <h2>Productos disponibles</h2>  <!-- Encabezado para la sección de productos -->
       <div class="thumbnails">
         {% for producto in productos %}
         <div class="product">
           {% load static %}
-          <img src="{% static 'images/' %}{{ producto.imagen }}" alt="{{ producto.nombre }}">
-          <p>{{ producto.nombre }}</p>
-          <p>Precio: {{ producto.precio }}</p>
+          <img src="{% static 'images/' %}{{ producto.imagen }}" alt="{{ producto.nombre }}">  <!-- Imagen del producto -->
+          <p>{{ producto.nombre }}</p>  <!-- Nombre del producto -->
+          <p>Precio: {{ producto.precio }}</p>  <!-- Precio del producto -->
         </div>
         {% endfor %}
       </div>
     </div>
   </div>
-  <footer>
+  
+  <footer>  <!-- Sección de pie de página -->
     <div class="container">
       <div class="row">
         <div class="footer-content">
           <h3>Información de contacto</h3>
-          <p>Dirección: Calle Principal #123, Ciudad, País</p>
+          <p>Dirección: Calle Principal #123, Ciudad, País</p>  <!-- Información de contacto -->
           <p>Teléfono: +123 456 789</p>
           <p>Correo electrónico: info@example.com</p>
         </div>
         <div class="footer-content">
           <h3>Información legal</h3>
-          <p>Derechos de autor © 2024. Todos los derechos reservados.</p>
+          <p>Derechos de autor © 2024. Todos los derechos reservados.</p>  <!-- Información legal -->
         </div>
       </div>
     </div>

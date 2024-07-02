@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <title>Gráfica de Líneas</title>
     {% load static %}
-  <link rel="stylesheet" href="{% static 'css/plot.css' %}" </head>
+    <link rel="stylesheet" href="{% static 'css/plot.css' %}">  <!-- Enlace al archivo CSS para estilos -->
 </head>
 <body>
-    <h1>Inserta valores para la gráfica</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Agregar Valor</button>
+    <h1>Inserta valores para la gráfica</h1>  <!-- Título principal -->
+    
+    <form method="post">  <!-- Formulario para insertar valores -->
+        {% csrf_token %}  <!-- Token de seguridad CSRF -->
+        {{ form.as_p }}  <!-- Renderiza el formulario 'form' como párrafos -->
+        <button type="submit">Agregar Valor</button>  <!-- Botón para agregar un valor -->
     </form>
 
-    <h2>Gráfica:</h2>
-    <img src="{{ plot_uri }}" alt="Gráfica de Líneas">
+    <h2>Gráfica:</h2>  <!-- Encabezado para la gráfica -->
+    
+    <img src="{{ plot_uri }}" alt="Gráfica de Líneas">  <!-- Imagen de la gráfica, 'plot_uri' contiene la URI de la imagen -->
 
 </body>
 </html>

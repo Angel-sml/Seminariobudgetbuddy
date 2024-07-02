@@ -1,0 +1,93 @@
+/* tasks_detalles.css */
+
+body {
+    background-color: #fff; /* Fondo azul oscuro */
+    color: #fff; /* Texto blanco */
+    font-family: Arial, sans-serif;
+}
+
+.task-details {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #3F51B5; /* Fondo azul intermedio */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.task-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error-message {
+    color: #f44336; /* Texto rojo */
+    background-color: #ffebee; /* Fondo rojo claro */
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.task-form, .complete-form, .delete-form {
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilo para los botones */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-button {
+    background-color: #FFD700; /* Azul claro */
+    color: #fff;
+}
+
+.complete-button {
+    background-color: #42a5f5; /* Azul intermedio */
+    color: #fff;
+}
+
+.delete-button {
+    background-color: #e53935; /* Rojo */
+    color: #fff;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+input, textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 10px;
+    border: 1px solid #90caf9; /* Borde azul claro */
+    border-radius: 5px;
+    background-color: #bbdefb; /* Fondo azul claro */
+    color: #000; /* Texto negro */
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin: 0 20px 0 0;
+}
+
+form label {
+    margin-bottom: 5px;
+    display: block;
+    color: #fff; /* Texto color */
+    font-size: 18px; /* Tamaño de texto */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold; /* Negrita */
+}

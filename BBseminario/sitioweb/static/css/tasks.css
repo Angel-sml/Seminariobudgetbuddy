@@ -1,32 +1,52 @@
 /* tasks.css */
-h1 {
-    color: #333;
-    text-align: center;
-}
 
-ul {
-    list-style: none;
+/* Centrar la lista de tareas */
+ul.metas {
+    list-style-type: none;
     padding: 0;
+    margin: 0 auto;
+    max-width: 600px; /* Controla el ancho de la lista */
 }
 
-ul li {
-    background-color: #fff;
-    margin: 10px;
-    padding: 15px;
+/* Estilo para los elementos de la lista */
+ul.metas li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
 }
 
-ul li a {
+/* Estilo para las tareas pendientes */
+ul.metas li.pendiente {
+    background-color: #f9f9f9; /* Color de fondo claro */
+    color: #333; /* Color de texto oscuro */
+}
+
+/* Estilo para las tareas completadas */
+ul.metas li.completada {
+    background-color: #e0ffe0; /* Color de fondo verde claro */
+    color: #3c763d; /* Color de texto verde oscuro */
+    text-decoration: line-through; /* Texto tachado */
+}
+
+ul.metas li a {
     text-decoration: none;
-    color: #333;
-    display: block;
+    color: inherit;
 }
 
-ul li a:hover {
-    background-color: #f9f9f9;
+ul.metas li a:hover {
+    background-color: #eee;
 }
 
-ul li a strong {
-    color: #e74c3c;
+ul.metas li p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;   
 }

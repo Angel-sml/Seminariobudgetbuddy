@@ -190,7 +190,7 @@ nav ul li a:focus {
 }
 
 .card-back {
-    background-color: #2196F3; /* color*/
+    background-color: #FFD700; /* color*/
     color: #f5f5f5;
     transform: rotateY(180deg);
 }
