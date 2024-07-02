@@ -1,0 +1,56 @@
+body {
+    background-color: #ffffff; /* Blanco para el fondo */
+    background: url("https://img.freepik.com/vector-premium/fondo-abstracto-moderno-color_779267-417.jpg?w=1380") no-repeat center center fixed;
+    background-size: cover;
+    background-position: center; /* Centra la imagen en la página */
+    color: #000000; /* Negro para el texto */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #2b455f; /* Azul para el encabezado */
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    background-color: #8099af; /* Azul claro para el fondo del formulario */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+button {
+    background-color: #1e90ff; /* Azul para el botón */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #1c86ee; /* Azul más oscuro al pasar el mouse */
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

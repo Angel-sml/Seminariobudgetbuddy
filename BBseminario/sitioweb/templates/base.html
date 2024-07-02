@@ -16,9 +16,14 @@
         <ul>
             <li><a href="/">Home</a></li>
             {% if user.is_authenticated %}
-                <li><a href="/tasks">Metas Pendientes</a></li>
-                <li><a href="/tasks-completadas">Metas Completadas</a></li>
-                <li><a href="/tasks/create/">Crear meta</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Metas Financieras ˅</a>
+                <div class="dropdown-content">
+                    <a href="/tasks/create/">Crear Meta</a>
+                    <a href="/tasks">Metas Pendientes</a>
+                    <a href="/tasks-completadas">Metas Completadas</a>
+                </div>
+            </li>
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Calculadoras ˅</a>
                     <div class="dropdown-content">
@@ -27,7 +32,9 @@
                     </div>
                 </li>
                 <li><a href="/compras">Presupuesto para Compras</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/prestamos">Recordatorio de prestamos</a></li>
+                <li><a href="/graficas">Grafica de ingresos</a></li>
+                <li><a href="/logout">Cerrar sesión</a></li>
             {% else %}
                 <li><a href="/signup">Registrarse</a></li>
                 <li><a href="/signin">Iniciar sesión</a></li>

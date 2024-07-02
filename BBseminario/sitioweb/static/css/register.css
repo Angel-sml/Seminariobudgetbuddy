@@ -1,0 +1,67 @@
+body {
+    background-color: #ffffff; /* Blanco para el fondo */
+    background: url("https://img.freepik.com/vector-premium/fondo-abstracto-moderno-color_779267-417.jpg?w=1380") no-repeat center center fixed;
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen en la página */
+    color: #000000; /* Negro para el texto */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+h1 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #2b455f; /* Azul para el encabezado */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.5em; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Negrita */
+}
+
+form {
+    background-color: #8099af; /* Azul claro para el fondo del formulario */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    position: relative;
+    z-index: 1; /* Asegura que el formulario esté encima de la imagen */
+}
+
+/* Removido el fondo curvado azul del formulario */
+
+button {
+    background-color: #1e90ff; /* Azul para el botón */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    font-size: 1.2em;
+}
+
+button:hover {
+    background-color: #1c86ee; /* Azul más oscuro al pasar el mouse */
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

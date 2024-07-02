@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
-from django.db import IntegrityError
+from django.db import IntegrityError, models
 from .forms import taskform, ValueForm
 from .models import task
 from django.http import HttpResponse
@@ -13,26 +13,39 @@ import io
 import base64
 import urllib.parse
 
-# Lista de productos (ejemplo)
+
+class Prestamo(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=255)
+    fecha = models.DateField()
+    fecha2 = models.DateField()
+    monto = models.DecimalField(max_digits=10, decimal_places=2)
+    
+    def __str__(self):
+        return f'{self.nombre} - {self.monto}'
+    
+
+# Lista de productos (ejemplo) (diccionario)
 productos = [
-    {"nombre": "iPad 10", "precio": 1000000, "imagen": "ipad10.jpeg"},
-    {"nombre": "iPhone 13", "precio": 2000000, "imagen": "iphone13.jpeg"},
-    {"nombre": "iPhone 14", "precio": 3000000, "imagen": "iphone14.jpeg"},
-    {"nombre": "iPhone 15", "precio": 4000000, "imagen": "iphone15.jpeg"},
-    {"nombre": "Laptop Asus", "precio": 5000000, "imagen": "lapasus.jpeg"},
-    {"nombre": "Laptop HP", "precio": 5000000, "imagen": "laphp.jpeg"},
-    {"nombre": "Laptop Lenovo", "precio": 5000000, "imagen": "laplenovo.jpeg"},
-    {"nombre": "Televisor LG 50", "precio": 5000000, "imagen": "lh50.jpeg"},
-    {"nombre": "MAC", "precio": 5000000, "imagen": "mac.jpeg"},
-    {"nombre": "Nintendo Switch", "precio": 5000000, "imagen": "nintendoswitch.jpeg"},
-    {"nombre": "PlayStation 4", "precio": 5000000, "imagen": "playstation4.jpeg"},
-    {"nombre": "PlayStation 5", "precio": 5000000, "imagen": "playstation5.jpeg"},
-    {"nombre": "Poco X6 Pro", "precio": 5000000, "imagen": "pocox6pro.jpeg"},
-    {"nombre": "Redmi Note 13 Pro", "precio": 5000000, "imagen": "redmi13pro.jpeg"},
-    {"nombre": "Televisor Samsung 50", "precio": 5000000, "imagen": "samsung50.jpeg"},
-    {"nombre": "Xbox One", "precio": 5000000, "imagen": "xboxone.jpeg"},
-    {"nombre": "Xbox Series X", "precio": 5000000, "imagen": "xboxseriesx.jpeg"}
+    {"nombre": "iPad 10", "precio": 2500000, "imagen": "ipad10.jpeg"},
+    {"nombre": "iPhone 13", "precio": 3200000, "imagen": "iphone13.jpeg"},
+    {"nombre": "iPhone 14", "precio": 4200000, "imagen": "iphone14.jpeg"},
+    {"nombre": "iPhone 15", "precio": 5200000, "imagen": "iphone15.jpeg"},
+    {"nombre": "Laptop Asus", "precio": 3500000, "imagen": "lapasus.jpeg"},
+    {"nombre": "Laptop HP", "precio": 3300000, "imagen": "laphp.jpeg"},
+    {"nombre": "Laptop Lenovo", "precio": 3400000, "imagen": "laplenovo.jpeg"},
+    {"nombre": "Televisor LG 50", "precio": 2700000, "imagen": "lh50.jpeg"},
+    {"nombre": "MAC", "precio": 8000000, "imagen": "mac.jpeg"},
+    {"nombre": "Nintendo Switch", "precio": 1600000, "imagen": "nintendoswitch.jpeg"},
+    {"nombre": "PlayStation 4", "precio": 1200000, "imagen": "playstation4.jpeg"},
+    {"nombre": "PlayStation 5", "precio": 2800000, "imagen": "playstation5.jpeg"},
+    {"nombre": "Poco X6 Pro", "precio": 1500000, "imagen": "pocox6pro.jpeg"},
+    {"nombre": "Redmi Note 13 Pro", "precio": 1400000, "imagen": "redmi13pro.jpeg"},
+    {"nombre": "Televisor Samsung 50", "precio": 2900000, "imagen": "samsung50.jpeg"},
+    {"nombre": "Xbox One", "precio": 1300000, "imagen": "xboxone.jpeg"},
+    {"nombre": "Xbox Series X", "precio": 2500000, "imagen": "xboxseriesx.jpeg"}
 ]
+
 
 # Función para mostrar la página de inicio
 def home(request):
@@ -208,3 +221,28 @@ def plot_view(request):
     buf.close()
 
     return render(request, 'plot.html', {'form': form, 'plot_uri': uri})
+
+
+@login_required
+def prestamos(request):
+    return render(request, 'prestamos.html')
+
+@login_required
+def ver_prestamos(request):
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        fecha = request.POST.get('fecha')
+        fecha2 = request.POST.get('fecha2')
+        monto = request.POST.get('monto')
+        
+        # Crear un nuevo prestamo en la base de datos
+        Prestamo.objects.create(
+            user=request.user,
+            nombre=nombre,
+            fecha=fecha,
+            fecha2=fecha2,
+            monto=monto
+        )
+
+    prestamos = Prestamo.objects.filter(user=request.user)
+    return render(request, 'visualizacion_prestamos.html', {'prestamos': prestamos})

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Préstamos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/visualizacion_prestamos.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Visualización de Préstamos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Fecha de Vencimiento</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prestamo in prestamos %}
+                <tr>
+                    <td>{{ prestamo.nombre }}</td>
+                    <td>{{ prestamo.fecha }}</td>
+                    <td>{{ prestamo.fecha2 }}</td>
+                    <td>{{ prestamo.monto }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/">Volver al índice</a>
+    </div>
+</body>
+</html>

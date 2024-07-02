@@ -17,8 +17,6 @@
                 {{ task.title }}  {# Si la tarea no es importante, muestra el título sin negrita #}
             {% endif %}
             
-            <p>{{ task.description }}</p>  {# Muestra la descripción de la tarea #}
-            <p>{{ task.user.username }}</p>  {# Muestra el nombre de usuario del creador de la tarea #}
             <p>{{ task.date_completed|date:'M j, Y H:i' }}</p>
 
 

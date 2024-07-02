@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: url("https://img.freepik.com/vector-gratis/fondo-pastel-acuarela-abstracta_87374-139.jpg?t=st=1719698013~exp=1719701613~hmac=df77191a3afe4dcdbc6d67fc10e61174d29b3ca17d055c687aed50347b875f17&w=740") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+    font-size: 2.5rem; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+    margin-bottom: 20px; /* Margen inferior */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+  }
+
+  form {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario horizontalmente */
+    padding: 20px; /* Espaciado interno del formulario */
+    background-color: #f4f4f4; /* Color de fondo */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+  
+  form label {
+    display: block; /* Mostrar etiquetas como bloques */
+    margin-bottom: 5px; /* Espaciado inferior entre etiquetas */
+  }
+  
+  form input[type="text"],
+  form input[type="date"] {
+    width: 100%; /* Ancho completo para inputs de texto */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado inferior entre inputs */
+    border: 1px solid #ccc; /* Borde del input */
+    border-radius: 5px; /* Borde redondeado */
+  }
+  
+  form button {
+    width: 100%; /* Ancho completo del botón */
+    padding: 10px; /* Espaciado interno */
+    background-color: #3498db; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cursor de puntero al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave de color */
+  }
+  
+  form button:hover {
+    background-color: #2980b9; /* Cambio de color al pasar el ratón */
+  }
+
+  .image {
+    margin: 20px auto;  
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    display: block; 
+    width: 50%; 
+    height: auto; 
+  }
+  
+  /*Estilizacion del footer*/
+footer {
+    margin-top: auto;
+    background-color: #f8f9fa;
+    padding: 5px 0;
+  }
+  
+  footer .container{
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-content{
+    width: 45%;
+    padding: 0 15px;
+  }
+  
+  footer h3 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  footer p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+  }
